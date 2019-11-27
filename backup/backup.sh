@@ -7,8 +7,7 @@ $workspace/sqlplusw <<@
     alter database archivelog; 
 @
 
-backup_dir=$ORADATA/backup/rman/
-mkdir -p $backup_dir
+mkdir -p $BACKUP_DIR
 
 rman target / <<@
     startup mount;
@@ -19,7 +18,7 @@ rman target / <<@
 
     configure channel
         device type disk
-        format '$backup_dir/rman_%d_%U.backup';
+        format '$BACKUP_DIR/rman_%d_%U.backup';
 
     configure retention policy
         to recovery window of 7 days;
