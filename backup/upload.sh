@@ -3,4 +3,5 @@
 workspace=`dirname $0`/../
 . $workspace/env.sh
 
-rsync --rsync-path=/opt/csw/bin/rsync --archive --progress --verbose $BACKUP_DIR oracle@db184:$BACKUP_DIR
+: ${TARGET_HOST:=oracle@db184}
+rsync --rsync-path=/opt/csw/bin/rsync --archive --progress --verbose $BACKUP_DIR $TARGET_HOST:$BACKUP_DIR
