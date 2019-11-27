@@ -11,15 +11,17 @@ backup_dir=$ORADATA/backup/rman/
 mkdir -p $backup_dir
 
 rman target / <<@
+    startup mount;
+
     configure channel
         device type disk
         format '$backup_dir/rman_%d_%U.backup';
 
-    startup mount;
     run {
         backup database;
         backup archivelog all;
     }
+
     shutdown;
     exit
 @
