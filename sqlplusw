@@ -1,5 +1,5 @@
 #!/bin/sh
 
-source $(dirname $0)/env.sh
+source `dirname $0`/env.sh
 
 sqlplus SYS/$DB_PASSWORD as SYSDBA $*
