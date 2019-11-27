@@ -21,7 +21,6 @@ rman target / <<@
         to recovery window of 7 days;
 
     run {
-        backup database;
         backup archivelog all;
     }
 
