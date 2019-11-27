@@ -22,6 +22,8 @@ rman target / <<@
         backup archivelog all;
     }
 
+    delete noprompt obsolete;
+
     shutdown;
     exit
 @
