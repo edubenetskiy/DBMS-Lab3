@@ -13,6 +13,8 @@ mkdir -p $backup_dir
 rman target / <<@
     startup mount;
 
+    configure backup optimization on;
+
     configure channel
         device type disk
         format '$backup_dir/rman_%d_%U.backup';
