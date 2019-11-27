@@ -29,6 +29,5 @@ rman target / <<@
 
     delete noprompt obsolete;
 
-    shutdown;
     exit
 @
