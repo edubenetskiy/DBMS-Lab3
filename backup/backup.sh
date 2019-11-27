@@ -7,10 +7,13 @@ $workspace/sqlplusw <<@
     alter database archivelog; 
 @
 
+backup_dir=$ORADATA/backup/rman/
+mkdir -p $backup_dir
+
 rman target / <<@
     configure channel
         device type disk
-        format '$ORADATA/backup/rman/rman_%d_%U.backup';
+        format '$backup_dir/rman_%d_%U.backup';
 
     startup mount;
     run {
