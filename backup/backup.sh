@@ -15,6 +15,8 @@ rman target / <<@
 
     configure backup optimization on;
 
+    configure controlfile autobackup on;
+
     configure channel
         device type disk
         format '$backup_dir/rman_%d_%U.backup';
