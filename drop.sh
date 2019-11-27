@@ -1,6 +1,10 @@
+#!/bin/sh
+
 #
 # Drop database
 #
+
+. `dirname $0`/env.sh
 
 sqlplus -S SYS/$DB_PASSWORD as SYSDBA <<@
     STARTUP;
