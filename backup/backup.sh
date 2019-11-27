@@ -8,6 +8,10 @@ $workspace/sqlplusw <<@
 @
 
 rman target / <<@
+    configure channel
+        device type disk
+        format '$ORADATA/backup/rman/rman_%d_%U.backup';
+
     startup mount;
     run {
         backup database;
