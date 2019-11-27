@@ -6,3 +6,13 @@ workspace=`dirname $0`/../
 $workspace/sqlplusw <<@
     alter database archivelog; 
 @
+
+rman target / <<@
+    startup mount;
+    run {
+        backup database;
+        backup archivelog all;
+    }
+    shutdown;
+    exit
+@
