@@ -17,6 +17,9 @@ rman target / <<@
         device type disk
         format '$backup_dir/rman_%d_%U.backup';
 
+    configure retention policy
+        to recovery window of 7 days;
+
     run {
         backup database;
         backup archivelog all;
