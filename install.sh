@@ -1,10 +1,11 @@
 #!/bin/bash -x
 
-source ./env.sh
+workspace=`dirname $0`
+. $workspace/env.sh
 
-install/20-sys-auth.sh
-install/30-init-file.sh
-install/40-data-storage.sh
-install/50-create-database.sh
-install/60-create-tablespaces.sh
-install/70-create-dict.sh
+$workspace/install/20-sys-auth.sh
+$workspace/install/30-init-file.sh
+$workspace/install/40-data-storage.sh
+$workspace/install/50-create-database.sh
+$workspace/install/60-create-tablespaces.sh
+$workspace/install/70-create-dict.sh
