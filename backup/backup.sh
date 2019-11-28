@@ -24,7 +24,7 @@ rman target / <<@
         to recovery window of 7 days;
 
     run {
-        backup archivelog all;
+        backup database plus archivelog;
     }
 
     delete noprompt obsolete;
