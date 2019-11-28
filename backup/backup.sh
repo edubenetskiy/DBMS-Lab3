@@ -21,7 +21,7 @@ rman target / <<@
         format '$BACKUP_DIR/rman_%d_%U.backup';
 
     configure retention policy
-        to recovery window of 7 days;
+        to redundancy 1;
 
     run {
         backup database plus archivelog;
