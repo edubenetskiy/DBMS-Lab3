@@ -5,9 +5,12 @@ workspace=`dirname $0`/../
 
 mkdir -p $BACKUP_DIR
 
-rman target / <<@
+$workspace/sqlplusw <<@
     shutdown;
     startup mount;
+@
+
+rman target / <<@
     restore archivelog all;
     restore database;
     recover database;
