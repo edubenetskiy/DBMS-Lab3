@@ -11,5 +11,5 @@ $workspace/sqlplusw <<@
     alter database mount standby database;
     recover standby database;
     auto
-    alter database open;
+    alter database open read only;
 @
