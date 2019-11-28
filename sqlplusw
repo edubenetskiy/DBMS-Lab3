@@ -2,4 +2,4 @@
 
 . `dirname $0`/env.sh
 
-sqlplus SYS/$DB_PASSWORD as SYSDBA $*
+NLS_LANG=American_America.UTF8 sqlplus SYS/$DB_PASSWORD as SYSDBA $*
