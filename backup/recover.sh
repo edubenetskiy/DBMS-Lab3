@@ -6,6 +6,7 @@ workspace=`dirname $0`/../
 mkdir -p $BACKUP_DIR
 
 rman target / <<@
+    restore archivelog all;
     restore database;
     recover database;
 @
