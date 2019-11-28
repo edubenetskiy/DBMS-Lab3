@@ -6,9 +6,10 @@ workspace=`dirname $0`/../
 mkdir -p $BACKUP_DIR
 
 $workspace/sqlplusw <<@
+    shutdown;
     startup nomount;
     alter database mount standby database;
     recover standby database;
     auto
-    shutdown;
+    alter database open;
 @
